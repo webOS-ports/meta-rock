@@ -1,0 +1,8 @@
+define KMACHINE rock
+define KTYPE standard
+define KARCH x86
+
+include bsp/common-pc-64/common-pc-64-standard
+branch sugarbay
+
+include rock.scc
