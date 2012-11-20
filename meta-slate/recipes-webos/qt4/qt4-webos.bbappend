@@ -1,7 +1,10 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 PRINC := "${@int(PRINC) + 6}"
 DEPENDS_append_slate +=" directfb tslib"
+SRC_URI_append_slate =" \
+                        file://add-slate-to-palm.patch"
 QT_CONFIG_FLAGS = "${QT4_MACHINE_CONFIG_ARCH_LITE_QPA} \
+                   ${QT_ENDIAN} -crossarch ${QT_ARCH} \
                    -release -opensource -confirm-license \
                    -no-cups -no-nis -no-exceptions \
                    -no-accessibility -no-qt3support -no-xmlpatterns -no-multimedia -no-phonon -no-phonon-backend \
