@@ -1,0 +1,25 @@
+From f1e9a9a9e535ae25574da0c96a689399d3bca7fa Mon Sep 17 00:00:00 2001
+From: Patrick Roberts <patrick@silentbluesystems.com>
+Date: Mon, 26 Nov 2012 22:30:30 -0800
+Subject: [PATCH 3/3] Tweak Media for Slate
+
+---
+ Src/sound/SoundPlayerPool.h |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/Src/sound/SoundPlayerPool.h b/Src/sound/SoundPlayerPool.h
+index bbe68d4..9a0b0fc 100644
+--- a/Src/sound/SoundPlayerPool.h
++++ b/Src/sound/SoundPlayerPool.h
+@@ -31,7 +31,7 @@
+ #include "sptr.h"
+ #include "Timer.h"
+ 
+-#if defined(TARGET_DESKTOP) || defined(TARGET_EMULATOR)
++#if defined(TARGET_DESKTOP) || defined(TARGET_EMULATOR) || defined(TARGET_X86_TABLET)
+ #include "SoundPlayerDummy.h"
+ #else
+ #include "SoundPlayer.h"
+-- 
+1.7.4.4
+
