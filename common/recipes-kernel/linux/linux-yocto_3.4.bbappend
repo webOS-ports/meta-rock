@@ -9,7 +9,6 @@ SRC_URI += "file://rock-standard.scc \
             file://rock.cfg \
             file://user-config.cfg \
             file://user-patches.scc \
-	        file://32bit.cfg \
            "
 
 SRCREV_machine_pn-linux-yocto_sugarbay ?= "6297e4c1d57e1063bfce297c2e12392348598559"
