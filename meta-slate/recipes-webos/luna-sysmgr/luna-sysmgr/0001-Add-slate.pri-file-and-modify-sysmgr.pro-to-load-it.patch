@@ -52,7 +52,7 @@ index 0000000..6e6c100
 +############
 +	#CONFIG_BUILD += opengl directrendering # texturesharing fb1poweroptimization
 +	CONFIG_BUILD += nyx webosdevice
-+    LIBS += -lqpalm
++    LIBS += -lqpalm -lserviceinstaller
 +}
 diff --git a/sysmgr.pro b/sysmgr.pro
 index f8ab8d8..450a9f1 100644
