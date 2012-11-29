@@ -11,9 +11,9 @@ MACHINE_FEATURES += "screen keyboard pci usbhost ext2 ext3 x86 \
 MACHINE_EXTRA_RRECOMMENDS += "kernel-modules eee-acpi-scripts"
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "grub"
 
-IMAGE_FSTYPES += "ext3 cpio.gz live"
+IMAGE_FSTYPES = "ext3 cpio.gz live"
 
-KERNEL_IMAGETYPE ?= "bzImage"
+KERNEL_IMAGETYPE = "bzImage"
 
 SERIAL_CONSOLE ?= "115200 ttyS0"
 
@@ -26,7 +26,7 @@ GLIBC_ADDONS ?= "nptl"
 # kernel-related variables
 #
 PREFERRED_PROVIDER_virtual/kernel ??= "linux-yocto"
-PREFERRED_VERSION_linux-yocto ??= "3.0%"
+PREFERRED_VERSION_linux-yocto ??= "3.5%"
 
 #
 # XSERVER subcomponents, used to build the XSERVER variable
