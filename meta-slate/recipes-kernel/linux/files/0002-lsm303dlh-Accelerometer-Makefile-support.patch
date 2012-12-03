@@ -1,0 +1,24 @@
+From 907790b503c11b579273661644781f618728a295 Mon Sep 17 00:00:00 2001
+From: Patrick Roberts <patrick@silentbluesystems.com>
+Date: Mon, 3 Dec 2012 10:50:23 -0800
+Subject: [PATCH 2/3] lsm303dlh Accelerometer Makefile support
+
+---
+ drivers/hwmon/Makefile |    1 +
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+
+diff --git a/drivers/hwmon/Makefile b/drivers/hwmon/Makefile
+index 6d3f11f..75fef33 100644
+--- a/drivers/hwmon/Makefile
++++ b/drivers/hwmon/Makefile
+@@ -82,6 +82,7 @@ obj-$(CONFIG_SENSORS_LM90)	+= lm90.o
+ obj-$(CONFIG_SENSORS_LM92)	+= lm92.o
+ obj-$(CONFIG_SENSORS_LM93)	+= lm93.o
+ obj-$(CONFIG_SENSORS_LM95241)	+= lm95241.o
++obj-$(CONFIG_SENSORS_LSM303DLH) += lsm303dlh_a.o lsm303dlh_m.o
+ obj-$(CONFIG_SENSORS_LM95245)	+= lm95245.o
+ obj-$(CONFIG_SENSORS_LTC4151)	+= ltc4151.o
+ obj-$(CONFIG_SENSORS_LTC4215)	+= ltc4215.o
+-- 
+1.7.4.4
+
