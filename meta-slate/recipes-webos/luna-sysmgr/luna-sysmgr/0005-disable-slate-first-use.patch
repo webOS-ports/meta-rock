@@ -1,0 +1,22 @@
+From: Patrick Roberts <patrick@silentbluesystems.com>
+Subject: [PATCH] Disable First Use on Slate
+
+---
+ LunaSysMgr.upstart |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/LunaSysMgr.upstart b/LunaSysMgr.upstart
+index c94a0b6..03886a7 100644
+--- a/LunaSysMgr.upstart
++++ b/LunaSysMgr.upstart
+@@ -10,7 +10,7 @@ respawn
+ pre-start script
+ 	echo "1" > /proc/sys/vm/overcommit_memory
+ 	mkdir -p /var/luna/preferences
+-	if grep -qs "qemux86" /etc/hostname ; then
++	if grep -qs "slate" /etc/hostname ; then
+ 		touch /var/luna/preferences/ran-first-use
+ 	fi
+ 	if [ ! -f /var/luna/preferences/ran-first-use ]
+-- 
+1.7.4.4
