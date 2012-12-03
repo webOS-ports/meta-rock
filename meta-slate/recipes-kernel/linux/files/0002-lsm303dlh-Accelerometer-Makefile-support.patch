@@ -2,6 +2,7 @@ From 907790b503c11b579273661644781f618728a295 Mon Sep 17 00:00:00 2001
 From: Patrick Roberts <patrick@silentbluesystems.com>
 Date: Mon, 3 Dec 2012 10:50:23 -0800
 Subject: [PATCH 2/3] lsm303dlh Accelerometer Makefile support
+Modified from: http://permalink.gmane.org/gmane.linux.kernel/1070448
 
 ---
  drivers/hwmon/Makefile |    1 +

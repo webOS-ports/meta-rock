@@ -2,6 +2,7 @@ From ee9f05d2215fbf4d473b1160be32f7cd781efc8d Mon Sep 17 00:00:00 2001
 From: Patrick Roberts <patrick@silentbluesystems.com>
 Date: Mon, 3 Dec 2012 10:51:19 -0800
 Subject: [PATCH 3/3] lsm303dlh Accelerometer driver files
+Modified from: http://permalink.gmane.org/gmane.linux.kernel/1070448
 
 ---
  drivers/hwmon/lsm303dlh_a.c | 1112 +++++++++++++++++++++++++++++++++++++++++++
@@ -49,6 +50,8 @@ index 0000000..a3f6e18
 +#include <linux/platform_device.h>
 +#include <linux/delay.h>
 +#include <linux/err.h>
++#include <linux/module.h>
++#include <linux/stat.h>
 +
 +#ifdef CONFIG_SENSORS_LSM303DLH_INPUT_DEVICE
 +#include <linux/input.h>
@@ -1167,6 +1170,8 @@ index 0000000..58b2765
 +#include <linux/platform_device.h>
 +#include <linux/delay.h>
 +#include <linux/err.h>
++#include <linux/module.h>
++#include <linux/stat.h>
 +
 +#ifdef CONFIG_SENSORS_LSM303DLH_INPUT_DEVICE
 +#include <linux/input.h>
