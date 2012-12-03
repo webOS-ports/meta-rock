@@ -11,8 +11,9 @@ KMACHINE_slate  = "slate"
 KERNEL_FEATURES_append_slate += " features/iwlwifi"
 
 SRC_URI += " file://slate.scc \
-             file://slate.cfg \"
-SRC_URI += "${@base_conditional('TARGET_ARCH', 'i586', '', 'file://32bit.cfg \', d)}"
+             file://slate.cfg \
+           "
+SRC_URI += "${@base_conditional('TARGET_ARCH', 'i586', '', 'file://32bit.cfg', d)}"
 
 SRCREV_machine_pn-linux-yocto_sugarbay ?= "${AUTOREV}"
 SRCREV_meta_pn-linux-yocto_sugarbay ?= "${AUTOREV}"
