@@ -26,7 +26,7 @@ GLIBC_ADDONS ?= "nptl"
 # kernel-related variables
 #
 PREFERRED_PROVIDER_virtual/kernel ??= "linux-yocto"
-PREFERRED_VERSION_linux-yocto ??= "3.5%"
+PREFERRED_VERSION_linux-yocto ??= "3.4%"
 
 #
 # XSERVER subcomponents, used to build the XSERVER variable
