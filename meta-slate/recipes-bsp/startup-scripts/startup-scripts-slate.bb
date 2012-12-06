@@ -1,5 +1,6 @@
 DESCRIPTON = "Startup scripts"
 LICENSE = "MIT"
+LIC_FILES_CHKSUM = "file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384361b4de20420"
 
 # Recipe revision - don't forget to 'bump' when a new revision is created !
 PR = "r0"
@@ -9,6 +10,7 @@ PR = "r0"
 # scripts are stored in the 'files' directory below the one in
 # which this file is located.
 #
+PACKAGE_ARCH = "${MACHINE_ARCH}"
 SRC_URI = "              \
    file://setkeycode-script \
    "
