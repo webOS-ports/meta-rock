@@ -1,0 +1,15 @@
+diff --git a/src/rockhopper/touchpanel/emulator/touchpanel.c b/src/rockhopper/touchpanel/emulator/touchpanel.c
+index f777847..a8c798d 100644
+--- a/src/rockhopper/touchpanel/emulator/touchpanel.c
++++ b/src/rockhopper/touchpanel/emulator/touchpanel.c
+@@ -178,7 +178,7 @@ init_touchpanel(void)
+ 	struct input_absinfo abs;
+ 	int  maxX, maxY, ret = -1;
+     	
+-	touchpanel_event_fd = open("/dev/input/touchscreen0", O_RDWR);
++	touchpanel_event_fd = open("/dev/input/event5", O_RDWR);
+ 	if(touchpanel_event_fd < 0) {
+ 		nyx_error("Error in opening touchpanel event device");
+ 		return -1;
+-- 
+1.7.4.4
