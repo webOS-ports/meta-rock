@@ -1,2 +1,3 @@
 #!/bin/sh
 setkeycodes e02d 102
+touch /var/luna/preferences/ran-first-use
