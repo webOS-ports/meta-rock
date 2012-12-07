@@ -1,0 +1,13 @@
+diff --git a/Src/webbase/WebAppManager.cpp b/Src/webbase/WebAppManager.cpp
+index f11895d..22159d5 100644
+--- a/Src/webbase/WebAppManager.cpp
++++ b/Src/webbase/WebAppManager.cpp
+@@ -211,7 +211,7 @@ WebAppManager::WebAppManager()
+     setenv("QT_PLUGIN_PATH", "/usr/plugins", 1);
+     setenv("QT_DEBUG_PLUGINS", "1", 1);
+ 
+-#if defined(TARGET_DEVICE)
++#if defined(TARGET_DEVICE)  && defined(HAVE_WEBOS)
+     static const char *argv[] = { "./WebAppManager", "-platform", "webos", NULL };
+ #else
+     static const char *argv[] = { "./WebAppManager", "-platform", "minimal", NULL };
