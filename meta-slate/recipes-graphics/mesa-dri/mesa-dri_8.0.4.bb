@@ -35,7 +35,7 @@ EXCLUDE_FROM_WORLD = "1"
 # ie mesa-dri could be empty and mesa-dri-dev RDEPENDS on it
 ALLOW_EMPTY_${PN} = "1"
 
-PACKAGES =+ "libegl libegl-dev libegl-dbg \
+PACKAGES =+ "libegl libdri libegl-dev libegl-dbg \
              libglu libglu-dev \
              libosmesa libosmesa-dev \
              libgl libgl-dev \
@@ -53,6 +53,7 @@ FILES_libgl = "${libdir}/libGL.so.*"
 FILES_libglapi = "${libdir}/libglapi.so.*"
 FILES_libglu = "${libdir}/libGLU.so.*"
 FILES_libosmesa = "${libdir}/libOSMesa.so.*"
+FILES_libdri = "${libdir}/dri/*.so"
 
 FILES_libegl-dev = "${libdir}/libEGL.* ${includedir}/EGL ${includedir}/KHR ${libdir}/pkgconfig/egl.pc"
 FILES_libgbm-dev = "${libdir}/libgbm* ${libdir}/pkgconfig/gbm.pc ${includedir}/gbm.h"
