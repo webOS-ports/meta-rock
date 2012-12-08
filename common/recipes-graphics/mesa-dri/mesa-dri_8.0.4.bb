@@ -15,7 +15,7 @@ LIC_FILES_CHKSUM = "file://docs/license.html;md5=03ccdc4c379c4289aecfb8892c546f6
 INC_PR = "r3"
 PE = "2"
 
-DEPENDS = "libxml2-native makedepend-native flex-native bison-native libdrm-no-x"
+DEPENDS = "libxml2-native makedepend-native flex-native bison-native libdrm"
 
 PROVIDES = "virtual/libgl virtual/libgles1 virtual/libgles2 virtual/egl"
 
@@ -24,10 +24,10 @@ FILESEXTRAPATHS_append := "${THISDIR}/mesa:"
 
 inherit autotools pkgconfig pythonnative
 
-EXTRA_OECONF = "--with-egl-platforms=drm --with-dri-drivers=swrast,i915 --enable-shared-glapi \
+EXTRA_OECONF = "--with-egl-platforms=drm --with-dri-drivers="915,swrast" --enable-shared-glapi \
                 --enable-gles1 --enable-gles2 \
                 --disable-glw  \
-                --disable-glut --disable-gallium --without-gallium-drivers --enable-opengl"
+                --disable-glut --disable-gallium --without-gallium-drivers --disable-glx"
 
 # Multiple virtual/gl providers being built breaks staging
 EXCLUDE_FROM_WORLD = "1"
@@ -73,7 +73,7 @@ SRC_URI = "ftp://ftp.freedesktop.org/pub/mesa/${PV}/MesaLib-${PV}.tar.bz2 \
            file://0003-fix-for-x32.patch \
            file://no-x11-headers.patch \
            "
-#SRC_URI += "${@base_contains('DISTRO_FEATURES', 'x11', '', 'file://0004-gross-hack-to-prevent-from-install-libgl.patch', d)}"
+SRC_URI += "${@base_contains('DISTRO_FEATURES', 'x11-gl', '', 'file://0004-gross-hack-to-prevent-from-install-libgl.patch', d)}"
 
 S = "${WORKDIR}/Mesa-${PV}"
 
