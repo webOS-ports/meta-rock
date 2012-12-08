@@ -9,4 +9,4 @@ SRC_URI_append_slate =" \
                         file://0003-Tweak-Media-for-Slate.patch \
                         file://0004-add-luna-slate-conf-file.patch \
                         file://0006-disable-webos-in-webappmgr.patch \
-                        file://disable-vsync-on-qpa.patch"
+                        file://0007-Disable-vsync-on-when-not-using-qws.patch"
