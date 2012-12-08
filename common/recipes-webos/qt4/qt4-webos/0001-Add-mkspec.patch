@@ -39,7 +39,7 @@ index 0000000..593872a
 +QMAKE_AR                = $$(AR_TMP)
 +QMAKE_OBJCOPY           = $$(OBJCOPY_TMP) 
 +QMAKE_STRIP             = $$(STRIP_TMP)
-+QMAKE_LIBS_OPENGL_ES2   = -Wl,-rpath $(STAGING_LIBDIR) -lGLESv2 -lEGL -lIMGegl
++QMAKE_LIBS_OPENGL_ES2   = -Wl,-rpath $(STAGING_LIBDIR) -lGLESv2 -lEGL 
 +
 +QMAKE_CFLAGS           += \
 +	-I$(STAGING_INCDIR)
@@ -57,7 +57,7 @@ index 0000000..593872a
 +
 +QMAKE_INCDIR_EGL        = $(STAGING_INCDIR) 
 +QMAKE_LIBDIR_EGL        = $(STAGING_LIBDIR)
-+QMAKE_LIBS_EGL          = -Wl,-rpath $(STAGING_LIBDIR) -lEGL -lIMGegl
++QMAKE_LIBS_EGL          = -Wl,-rpath $(STAGING_LIBDIR) -lEGL 
 +
 +
 +load(qt_config)
