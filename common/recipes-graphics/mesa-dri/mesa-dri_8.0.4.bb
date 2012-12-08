@@ -24,7 +24,7 @@ FILESEXTRAPATHS_append := "${THISDIR}/mesa:"
 
 inherit autotools pkgconfig pythonnative
 
-EXTRA_OECONF = "--with-egl-platforms=drm --with-dri-drivers="915,swrast" --enable-shared-glapi \
+EXTRA_OECONF = "--with-egl-platforms=drm --with-dri-drivers="i915,swrast" --enable-shared-glapi \
                 --enable-gles1 --enable-gles2 \
                 --disable-glw  \
                 --disable-glut --disable-gallium --without-gallium-drivers --disable-glx"
