@@ -92,4 +92,4 @@ do_configure_prepend() {
 }
 FILES_${PN}-dbg += "${libdir}/dri/.debug/*"
 
-PR = "${INC_PR}.1"
+PR = "${INC_PR}.2"

@@ -1,9 +1,10 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
-PRINC := "${@int(PRINC) + 6}"
+PRINC := "${@int(PRINC) + 7}"
 DEPENDS_append_slate +=" directfb tslib mesa-dri"
 SRC_URI_append_slate =" \
                         file://disable-webos-slate.patch \
-                        file://0001-Tweak-qegl-for-mesa-use.patch"
+                        file://0001-Tweak-qegl-for-mesa-use.patch \
+                        file://0001-Modify-egl-some-more-for-testing-purposes.patch"
 QT_CONFIG_FLAGS = "${QT4_MACHINE_CONFIG_ARCH_LITE_QPA} \
                    ${QT_ENDIAN} -crossarch ${QT_ARCH} \
                    -release -opensource -confirm-license \
@@ -15,6 +16,6 @@ QT_CONFIG_FLAGS = "${QT4_MACHINE_CONFIG_ARCH_LITE_QPA} \
                    -prefix ${prefix} -datadir ${libdir}/qmake-webos \
                    -xplatform qws/linux-rock-g++ -no-neon -no-rpath -DQT_QWS_CLIENTBLIT -DQT_NO_DYNAMIC_CAST -DPALM_DEVICE \
                    -qt-mouse-pc -qt-mouse-qvfb -qt-mouse-linuxinput \
-                   -plugin-gfx-directfb -opengl -plugin-gfx-egl -DMESA_EGL_NO_X11_HEADERS \
+                   -plugin-gfx-directfb -opengl es2 -plugin-gfx-egl -DMESA_EGL_NO_X11_HEADERS \
                    -make 'libs' \
                    -qconfig palm"

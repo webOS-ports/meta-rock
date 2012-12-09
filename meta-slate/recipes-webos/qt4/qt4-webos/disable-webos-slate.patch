@@ -16,7 +16,7 @@ index 6bf8675..c7de126 100644
          SUBDIRS += taskone
          SUBDIRS += palm
 +    } else:slate {
-+        SUBDIRS += palm
++        SUBDIRS += palm eglfs
      } else {
          SUBDIRS += palm
          SUBDIRS += webos
