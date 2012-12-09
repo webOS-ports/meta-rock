@@ -1,0 +1,25 @@
+From 584c9077ef3e2b51fcd46bc0b67184cdec293811 Mon Sep 17 00:00:00 2001
+From: Patrick Roberts <patrick@silentbluesystems.com>
+Date: Sat, 8 Dec 2012 20:18:54 -0800
+Subject: [PATCH] Another compile fix
+
+---
+ src/plugins/platforms/eglfs/qeglfsscreen.cpp |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/src/plugins/platforms/eglfs/qeglfsscreen.cpp b/src/plugins/platforms/eglfs/qeglfsscreen.cpp
+index cb31b1f..9f4507c 100644
+--- a/src/plugins/platforms/eglfs/qeglfsscreen.cpp
++++ b/src/plugins/platforms/eglfs/qeglfsscreen.cpp
+@@ -181,7 +181,7 @@ void QEglFSScreen::createAndSetPlatformContext()
+     }
+     //    qWarning("Created surface %dx%d\n", w, h);
+ 
+-#ifdef QEGL_EXTRA_DEBUG
++#ifndef QEGL_EXTRA_DEBUG
+     qWarning("Configuration %d matches requirements\n", (int)config);
+ 
+     for (index = 0; attrs[index].attr != -1; ++index) {
+-- 
+1.7.4.4
+

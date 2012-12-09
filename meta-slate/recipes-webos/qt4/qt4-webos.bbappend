@@ -6,7 +6,8 @@ SRC_URI_append_slate =" \
                         file://disable-webos-slate.patch \
                         file://0001-Tweak-qegl-for-mesa-use.patch \
                         file://0001-Modify-egl-some-more-for-testing-purposes.patch \
-                        file://0001-Slate-does-not-have-vendor-set.patch
+                        file://0001-Slate-does-not-have-vendor-set.patch \
+                        file://0001-Another-compile-fix.patch \
                         "
 QT_CONFIG_FLAGS = "${QT4_MACHINE_CONFIG_ARCH_LITE_QPA} \
                    ${QT_ENDIAN} -crossarch ${QT_ARCH} \
