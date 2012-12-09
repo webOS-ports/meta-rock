@@ -2,7 +2,8 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 PRINC := "${@int(PRINC) + 6}"
 DEPENDS_append_slate +=" directfb tslib mesa-dri"
 SRC_URI_append_slate =" \
-                        file://disable-webos-slate.patch"
+                        file://disable-webos-slate.patch \
+                        file://0001-Tweak-qegl-for-mesa-use.patch"
 QT_CONFIG_FLAGS = "${QT4_MACHINE_CONFIG_ARCH_LITE_QPA} \
                    ${QT_ENDIAN} -crossarch ${QT_ARCH} \
                    -release -opensource -confirm-license \

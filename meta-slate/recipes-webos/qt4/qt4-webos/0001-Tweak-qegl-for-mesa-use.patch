@@ -1,0 +1,42 @@
+From 4744534707e8efc7ab9c9c7d6277ebd85445c1a1 Mon Sep 17 00:00:00 2001
+From: Patrick Roberts <patrick@silentbluesystems.com>
+Date: Sat, 8 Dec 2012 17:20:31 -0800
+Subject: [PATCH] Tweak qegl for mesa use
+
+---
+ src/gui/egl/qegl.cpp |   10 +++++++---
+ 1 files changed, 7 insertions(+), 3 deletions(-)
+
+diff --git a/src/gui/egl/qegl.cpp b/src/gui/egl/qegl.cpp
+index a84a6fb..6305e7d 100644
+--- a/src/gui/egl/qegl.cpp
++++ b/src/gui/egl/qegl.cpp
+@@ -289,10 +289,14 @@ EGLConfig QEgl::chooseConfig(const QEglProperties* properties, QEgl::PixelFormat
+ {
+     QEglProperties props(*properties);
+     EGLConfig cfg = QEGL_NO_CONFIG;
++    EGLint matching = 0;
++    EGLDisplay dpy = QEgl::display();
++    eglGetConfigs(dpy,&cfg,1,&matching);
++    return cfg;
++    
++    
+     do {
+         // Get the number of matching configurations for this set of properties.
+-        EGLint matching = 0;
+-        EGLDisplay dpy = QEgl::display();
+         if (!eglChooseConfig(dpy, props.properties(), 0, 0, &matching) || !matching)
+             continue;
+ 
+@@ -302,7 +306,7 @@ EGLConfig QEgl::chooseConfig(const QEglProperties* properties, QEgl::PixelFormat
+             eglChooseConfig(display(), props.properties(), &cfg, 1, &matching);
+             if (matching < 1)
+                 continue;
+-            return cfg;
++            
+         }
+ 
+         // Fetch all of the matching configurations and find the
+-- 
+1.7.4.4
+
