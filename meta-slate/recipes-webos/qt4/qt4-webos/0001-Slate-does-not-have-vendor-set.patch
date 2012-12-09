@@ -1,0 +1,25 @@
+From 0901c6833e595d22e5ad81105c5411468e0852d4 Mon Sep 17 00:00:00 2001
+From: Patrick Roberts <patrick@silentbluesystems.com>
+Date: Sat, 8 Dec 2012 20:01:35 -0800
+Subject: [PATCH] Slate does not have vendor set
+
+---
+ .../eglconvenience/qeglplatformcontext.cpp         |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/src/plugins/platforms/eglconvenience/qeglplatformcontext.cpp b/src/plugins/platforms/eglconvenience/qeglplatformcontext.cpp
+index 9ad98c7..c8ef736 100644
+--- a/src/plugins/platforms/eglconvenience/qeglplatformcontext.cpp
++++ b/src/plugins/platforms/eglconvenience/qeglplatformcontext.cpp
+@@ -97,7 +97,7 @@ void QEGLPlatformContext::makeCurrent()
+     bool ok = eglMakeCurrent(m_eglDisplay, m_eglSurface, m_eglSurface, m_eglContext);
+     if (!ok)
+         qWarning("QEGLPlatformContext::makeCurrent: eglError: %d, this: %p \n", eglGetError(), this);
+-#ifdef QEGL_EXTRA_DEBUG
++#ifndef QEGL_EXTRA_DEBUG
+     static bool showDebug = true;
+     if (showDebug) {
+         showDebug = false;
+-- 
+1.7.4.4
+
