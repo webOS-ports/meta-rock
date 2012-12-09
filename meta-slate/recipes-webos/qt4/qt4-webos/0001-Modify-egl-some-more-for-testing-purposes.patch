@@ -1,0 +1,87 @@
+From f7a1a2f87d43249c7b1630d80508df176fbedadd Mon Sep 17 00:00:00 2001
+From: Patrick Roberts <patrick@silentbluesystems.com>
+Date: Sat, 8 Dec 2012 19:40:44 -0800
+Subject: [PATCH] Modify egl some more for testing purposes
+
+---
+ src/opengl/qgl_qws.cpp                             |   29 ++++++++++++++++++-
+ .../platforms/eglconvenience/qeglconvenience.cpp   |    2 +
+ src/plugins/platforms/eglfs/eglfs.pro              |    2 +-
+ 3 files changed, 30 insertions(+), 3 deletions(-)
+
+diff --git a/src/opengl/qgl_qws.cpp b/src/opengl/qgl_qws.cpp
+index 5cf5204..2c6c62d 100644
+--- a/src/opengl/qgl_qws.cpp
++++ b/src/opengl/qgl_qws.cpp
+@@ -157,8 +157,33 @@ static EGLSurface qt_egl_create_surface
+         props = 0;
+     EGLSurface surf;
+     if (devType == QInternal::Widget) {
+-        surf = eglCreateWindowSurface
+-            (context->display(), context->config(), windowDrawable, props);
++        EGLint screenAttribs[10];
++        int i = 0;
++        screenAttribs[i++] = EGL_WIDTH;
++        screenAttribs[i++] = 1280;
++        screenAttribs[i++] = EGL_HEIGHT;
++        screenAttribs[i++] = 1024;
++        screenAttribs[i++] = EGL_NONE;
++        EGLint matching = 0;
++        EGLConfig cfg;
++        eglGetConfigs(QEgl::display(),&cfg,1,&matching);
++        surf = eglCreateScreenSurfaceMESA(context->display(), cfg, screenAttribs);
++
++        EGLScreenMESA screen;
++        eglGetScreensMESA(context->display(), &screen, 1, &matching);
++
++        EGLModeMESA mode;
++        eglGetModesMESA(context->display(), screen, &mode, 1, &matching);
++        bool b = eglShowScreenSurfaceMESA(context->display(), screen, surf, mode);
++
++        if (!b) {
++                printf("QEgl::createSurface(): show surface failed\n");
++                return 0;
++        }
++
++        qWarning("QEgl::createSurface(): widget surface");
++//        surf = eglCreateWindowSurface
++//            (context->display(), context->config(), windowDrawable, props);
+     } else {
+         surf = eglCreatePixmapSurface
+             (context->display(), context->config(), pixmapDrawable, props);
+diff --git a/src/plugins/platforms/eglconvenience/qeglconvenience.cpp b/src/plugins/platforms/eglconvenience/qeglconvenience.cpp
+index d432573..06f9f67 100644
+--- a/src/plugins/platforms/eglconvenience/qeglconvenience.cpp
++++ b/src/plugins/platforms/eglconvenience/qeglconvenience.cpp
+@@ -213,6 +213,7 @@ EGLConfig q_configFromQPlatformWindowFormat(EGLDisplay display, const QPlatformW
+     QVector<EGLint> configureAttributes = q_createConfigAttributesFromFormat(format);
+     configureAttributes.append(EGL_SURFACE_TYPE); //we only support eglconfigs for windows for now
+     configureAttributes.append(surfaceType);
++    qWarning("EGLConfig surface type : %x",surfaceType);
+ 
+     configureAttributes.append(EGL_RENDERABLE_TYPE);
+     if (format.windowApi() == QPlatformWindowFormat::OpenVG) {
+@@ -252,6 +253,7 @@ EGLConfig q_configFromQPlatformWindowFormat(EGLDisplay display, const QPlatformW
+         EGLConfig *configs = new EGLConfig [size];
+         eglChooseConfig(display, configureAttributes.constData(), configs, size, &matching);
+         for (EGLint index = 0; index < size; ++index) {
++            qWarning("Found EGLConfig");
+             EGLint red, green, blue, alpha;
+             eglGetConfigAttrib(display, configs[index], EGL_RED_SIZE, &red);
+             eglGetConfigAttrib(display, configs[index], EGL_GREEN_SIZE, &green);
+diff --git a/src/plugins/platforms/eglfs/eglfs.pro b/src/plugins/platforms/eglfs/eglfs.pro
+index c38b80d..81bd65a 100644
+--- a/src/plugins/platforms/eglfs/eglfs.pro
++++ b/src/plugins/platforms/eglfs/eglfs.pro
+@@ -6,7 +6,7 @@ QT += opengl
+ 
+ QTDIR_build:DESTDIR = $$QT_BUILD_TREE/plugins/platforms
+ 
+-#DEFINES += QEGL_EXTRA_DEBUG
++DEFINES += QEGL_EXTRA_DEBUG
+ 
+ #DEFINES += Q_OPENKODE
+ 
+-- 
+1.7.4.4
+
