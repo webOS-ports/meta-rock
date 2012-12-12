@@ -1,0 +1,5 @@
+define KTYPE standard
+define KARCH x86
+branch standard
+
+include rock.scc
