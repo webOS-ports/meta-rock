@@ -1,4 +1,0 @@
-#!/bin/sh
-setkeycodes e02d 102
-mkdir -p /var/luna/preferences
-touch /var/luna/preferences/ran-first-use
