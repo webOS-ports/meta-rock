@@ -59,25 +59,6 @@ do_install_append () {
 # For the packages that make up the OpenGL interfaces, inject variables so that
 # they don't get Debian-renamed (which would remove the -mesa suffix), and
 # RPROVIDEs/RCONFLICTs on the generic libgl name.
-python __anonymous() {
-    for p in (("libegl", "libegl1"), ("libgl", "libgl1"),
-              ("libgles1", "libglesv1-cm1"), ("libgles2", "libglesv2-2"),
-              ("libgles3",)):
-        fullp = p[0] + "-mesa"
-        pkgs = " ".join(p)
-        d.setVar("DEBIAN_NOAUTONAME_" + fullp, "1")
-        d.appendVar("RREPLACES_" + fullp, pkgs)
-        d.appendVar("RPROVIDES_" + fullp, pkgs)
-        d.appendVar("RCONFLICTS_" + fullp, pkgs)
-        
-        # For -dev, the first element is both the Debian and original name
-        fullp += "-dev"
-        pkgs = p[0] + "-dev"
-        d.setVar("DEBIAN_NOAUTONAME_" + fullp, "1")
-        d.appendVar("RREPLACES_" + fullp, pkgs)
-        d.appendVar("RPROVIDES_" + fullp, pkgs)
-        d.appendVar("RCONFLICTS_" + fullp, pkgs)
-}
 
 FILES_${PN} = "${sysconfdir}/drirc"
 FILES_libdricore = "${libdir}/libdricore*.so.*"
