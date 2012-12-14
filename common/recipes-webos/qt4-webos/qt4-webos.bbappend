@@ -16,3 +16,6 @@ QT_CONFIG_FLAGS_slate = "${QT4_MACHINE_CONFIG_ARCH_LITE_QPA} \
                    -plugin-gfx-directfb -opengl es2 -plugin-gfx-egl -DMESA_EGL_NO_X11_HEADERS \
                    -make 'libs' \
                    -qconfig palm"
+do_install_append() {
+    oe_libinstall -C ${PALM_BUILD_DIR}/plugins/platforms -so libqpalm ${D}/${libdir}
+}
