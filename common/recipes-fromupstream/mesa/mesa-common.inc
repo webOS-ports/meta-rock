@@ -61,6 +61,7 @@ do_install_append () {
 # RPROVIDEs/RCONFLICTs on the generic libgl name.
 
 FILES_${PN} = "${sysconfdir}/drirc"
+FILES_${PN} += "${libdir}/dri/*"
 FILES_libdricore = "${libdir}/libdricore*.so.*"
 FILES_libegl-mesa = "${libdir}/libEGL.so.*"
 FILES_libgbm = "${libdir}/libgbm.so.*"

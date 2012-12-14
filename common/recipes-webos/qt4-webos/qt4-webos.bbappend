@@ -1,6 +1,7 @@
 PR_append_slate = "+wop-rock+gitr${SRCPV}"
 SRC_URI_slate = "git://github.com/halfhalo/qt;branch=halfhalo/slate;protocol=git"
 SRCREV_slate ="${AUTOREV}"
+DEPENDS_slate = "mesa-dri directfb"
 QT_CONFIG_FLAGS_slate = "${QT4_MACHINE_CONFIG_ARCH_LITE_QPA} \
                    ${QT_ENDIAN} -crossarch ${QT_ARCH} \
                    -release -opensource -confirm-license \
