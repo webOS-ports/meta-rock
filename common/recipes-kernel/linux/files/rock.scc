@@ -2,9 +2,6 @@ kconf hardware rock.cfg
 include cfg/x86.scc
 include features/serial/8250.scc
 include features/power/intel.scc
-features/hpet/hpet.scc
-
-include features/logbuf/size-normal.scc
 
 include features/latencytop/latencytop.scc
 include features/profiling/profiling.scc

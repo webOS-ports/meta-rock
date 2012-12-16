@@ -4,8 +4,6 @@ PR := "${PR}.2"
 
 COMPATIBLE_MACHINE_slate = "slate"
 
-KBRANCH_slate  = "${@base_conditional('TARGET_ARCH', 'i586', 'standard/default/common-pc/sugarbay', 'standard/default/common-pc-64/sugarbay', d)}"
-
 KMACHINE_slate  = "common-pc"
 
 KERNEL_FEATURES_append_slate += " features/iwlwifi"
