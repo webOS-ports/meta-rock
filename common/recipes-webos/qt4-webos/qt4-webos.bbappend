@@ -13,7 +13,7 @@ QT_CONFIG_FLAGS_slate = "${QT4_MACHINE_CONFIG_ARCH_LITE_QPA} \
                    -prefix ${prefix} -datadir ${libdir}/qmake-webos \
                    -xplatform qws/linux-rock-g++ -no-neon -no-rpath -DQT_QWS_CLIENTBLIT -DQT_NO_DYNAMIC_CAST -DPALM_DEVICE \
                    -qt-mouse-pc -qt-mouse-qvfb -qt-mouse-linuxinput \
-                   -plugin-gfx-directfb -opengl es2 -plugin-gfx-egl -DMESA_EGL_NO_X11_HEADERS \
+                   -plugin-gfx-directfb -opengl -plugin-gfx-egl -DMESA_EGL_NO_X11_HEADERS \
                    -make 'libs' \
                    -qconfig palm"
 do_install_append() {
