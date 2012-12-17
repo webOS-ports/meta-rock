@@ -9,7 +9,7 @@ EXTRA_OECONF += "--disable-gallium --without-gallium-drivers"
 EXTRA_OECONF += "--enable-dri --with-dri-drivers=${DRIDRIVERS}"
 EXTRA_OECONF += "--enable-gbm"
 EXTRA_OECONF += "--enable-gles1 --enable-gles2  --enable-gles3"
-EXTRA_OECONF += "--enable-egl --with-egl-platforms=drm,fbdev,x11"
+EXTRA_OECONF += "--enable-egl --with-egl-platforms=wayland,drm,fbdev,x11"
 EXTRA_OECONF += "--disable-glx"
 #PACKAGECONFIG[gles] = "--enable-gles1 --enable-gles2, --disable-gles1 --disable-gles2"
 

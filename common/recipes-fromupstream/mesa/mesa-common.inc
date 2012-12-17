@@ -31,7 +31,7 @@ EXTRA_OECONF = "--disable-glu \
 
 #PACKAGECONFIG ??= "${@base_contains('DISTRO_FEATURES', 'x11', 'x11', '', d)} egl gles"
 
-#X11_DEPS = "xf86driproto glproto virtual/libx11 libxext libxxf86vm libxdamage libxfixes"
+DEPENDS += " xf86driproto glproto virtual/libx11 libxext libxxf86vm libxdamage libxfixes"
 #PACKAGECONFIG[x11] = "--enable-glx-tls,--disable-glx,${X11_DEPS}"
 
 # Multiple virtual/gl providers being built breaks staging
