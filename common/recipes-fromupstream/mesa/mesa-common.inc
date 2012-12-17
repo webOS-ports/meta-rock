@@ -12,7 +12,7 @@ SECTION = "x11"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://docs/license.html;md5=03ccdc4c379c4289aecfb8892c546f67"
 
-INC_PR = "r7"
+INC_PR = "r8"
 PE = "2"
 
 DEPENDS = "libxml2-native makedepend-native flex-native bison-native"
@@ -31,7 +31,7 @@ EXTRA_OECONF = "--disable-glu \
 
 #PACKAGECONFIG ??= "${@base_contains('DISTRO_FEATURES', 'x11', 'x11', '', d)} egl gles"
 
-DEPENDS += " xf86driproto glproto virtual/libx11 libxext libxxf86vm libxdamage libxfixes"
+#DEPENDS += " xf86driproto glproto virtual/libx11 libxext libxxf86vm libxdamage libxfixes"
 #PACKAGECONFIG[x11] = "--enable-glx-tls,--disable-glx,${X11_DEPS}"
 
 # Multiple virtual/gl providers being built breaks staging
