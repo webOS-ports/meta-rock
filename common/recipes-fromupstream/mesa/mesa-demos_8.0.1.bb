@@ -22,4 +22,4 @@ SRC_URI[sha256sum] = "4bc7f2b20d17e3eebfec288f2367a435cd2db71fc5ac9ece2c14827e29
 
 inherit autotools pkgconfig
 
-EXTRA_OECONF = "--without-glut"
+EXTRA_OECONF = "--without-glut --enable-egl --enable-gles2 --enable-libdrm"

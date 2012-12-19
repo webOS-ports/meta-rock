@@ -14,5 +14,3 @@ MACHINE_FEATURES +=" touchscreen wifi bluetooth zeroconf "
 MACHINE_EXTRA_RDEPENDS +=" kernel-modules "
 IMAGE_INSTALL_append +=" linux-firmware curl opkg wireless-tools e2fsprogs"
 WEBOS_IMAGE_EXTRA_INSTALL += "freetype fontconfig connman"
-
-DISTRO_FEATURES_append =" directfb+gtk "
