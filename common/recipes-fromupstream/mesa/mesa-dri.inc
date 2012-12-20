@@ -5,7 +5,8 @@ DRIDRIVERS = "swrast"
 DRIDRIVERS_append_x86 = ",i915,i965"
 DRIDRIVERS_append_x86-64 = ",i915,i965"
 
-EXTRA_OECONF += " ${@base_contains('MACHINE_FEATURES', 'gallium', ',--with-gallium-drivers=i915,swrast --enable-gallium-egl ', '', d) --with-openvg"
+EXTRA_OECONF += " ${@base_contains('MACHINE_FEATURES', 'gallium', ',--with-gallium-drivers=i915,swrast --enable-gallium-egl ', '', d)}"
+EXTRA_OECONF += "--with-openvg "
 EXTRA_OECONF += " --enable-dri --with-dri-drivers=${DRIDRIVERS}"
 EXTRA_OECONF += " --enable-gbm"
 EXTRA_OECONF += " --enable-gles2"
@@ -18,4 +19,3 @@ EXTRA_OECONF += " --disable-glx"
 #PACKAGECONFIG[egl] = "--enable-egl --with-egl-platforms=${EGL_PLATFORMS}, --disable-egl"
 
 FILES_${PN}-dbg += "${libdir}/dri/.debug/*"
-
