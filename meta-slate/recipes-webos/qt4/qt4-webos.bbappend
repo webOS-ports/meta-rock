@@ -4,7 +4,7 @@ DEPENDS_append_slate +=" directfb tslib"
 SRC_URI_append_slate =" \
                         file://add-slate-to-palm.patch \
                         file://disable-webos-slate.patch"
-QT_CONFIG_FLAGS = "${QT4_MACHINE_CONFIG_ARCH_LITE_QPA} \
+QT_CONFIG_FLAGS_slate = "${QT4_MACHINE_CONFIG_ARCH_LITE_QPA} \
                    ${QT_ENDIAN} -crossarch ${QT_ARCH} \
                    -release -opensource -confirm-license \
                    -no-cups -no-nis -no-exceptions \
