@@ -10,5 +10,5 @@ require conf/machine/include/ia32-base.inc
 
 SERIAL_CONSOLE=""
 
-MACHINE_FEATURES +=" touchscreen wifi bluetooth zeroconf "
-MACHINE_EXTRA_RDEPENDS +=" kernel-modules "
+MACHINE_FEATURES += "touchscreen wifi bluetooth zeroconf "
+MACHINE_EXTRA_RDEPENDS += "kernel-modules "
