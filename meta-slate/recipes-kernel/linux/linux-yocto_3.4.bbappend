@@ -1,6 +1,6 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
-PR := "${PR}.2"
+PRINC := "${@int(PRINC) + 1}"
 
 COMPATIBLE_MACHINE_slate = "slate"
 COMPATIBLE_MACHINE_slate-64 = "slate"
@@ -22,6 +22,3 @@ SRC_URI += " file://slate.scc \
              file://0003-lsm303dlh-Accelerometer-driver-files.patch \
            "
 SRC_URI += "${@base_conditional('TARGET_ARCH', 'i586', 'file://32bit.cfg', '', d)}"
-
-SRCREV_machine_pn-linux-yocto_sugarbay ?= "${AUTOREV}"
-SRCREV_meta_pn-linux-yocto_sugarbay ?= "${AUTOREV}"
