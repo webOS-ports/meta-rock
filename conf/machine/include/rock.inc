@@ -12,5 +12,3 @@ SERIAL_CONSOLE=""
 
 MACHINE_FEATURES +=" touchscreen wifi bluetooth zeroconf "
 MACHINE_EXTRA_RDEPENDS +=" kernel-modules "
-
-DISTRO_FEATURES_append =" directfb+gtk "
