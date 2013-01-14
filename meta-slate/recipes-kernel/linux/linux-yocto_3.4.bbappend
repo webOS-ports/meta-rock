@@ -5,8 +5,9 @@ PR := "${PR}.2"
 COMPATIBLE_MACHINE_slate = "slate"
 COMPATIBLE_MACHINE_slate-64 = "slate"
 
-KBRANCH_slate  = "${@base_conditional('TARGET_ARCH', 'i586', 'standard/default/common-pc/base', 'standard/default/common-pc-64/sugarbay', d)}"
-KBRANCH_slate-64  = "${@base_conditional('TARGET_ARCH', 'i586', 'standard/default/common-pc/base', 'standard/default/common-pc-64/sugarbay', d)}"
+
+KBRANCH_slate  = "${@base_conditional('TARGET_ARCH', 'i586', 'standard/common-pc/base', 'standard/common-pc-64/sugarbay', d)}"
+KBRANCH_slate-64  = "${@base_conditional('TARGET_ARCH', 'i586', 'standard/common-pc/base', 'standard/common-pc-64/sugarbay', d)}"
 
 KMACHINE_slate  = "common-pc"
 KMACHINE_slate-64  = "common-pc"
