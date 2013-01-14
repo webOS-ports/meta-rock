@@ -1,5 +1,4 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
-DEPENDS_x86+="git-replacement-native"
 PR := "${PR}.1"
 
 KERNEL_FEATURES_append_x86 += " cfg/smp.scc"

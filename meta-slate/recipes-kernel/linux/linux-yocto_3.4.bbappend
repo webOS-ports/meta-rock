@@ -6,11 +6,11 @@ COMPATIBLE_MACHINE_slate = "slate"
 COMPATIBLE_MACHINE_slate-64 = "slate"
 
 
-KBRANCH_slate  = "${@base_conditional('TARGET_ARCH', 'i586', 'standard/common-pc/base', 'standard/common-pc-64/sugarbay', d)}"
-KBRANCH_slate-64  = "${@base_conditional('TARGET_ARCH', 'i586', 'standard/common-pc/base', 'standard/common-pc-64/sugarbay', d)}"
+KBRANCH_slate  = "${@base_conditional('TARGET_ARCH', 'i586', 'standard/base', 'standard/common-pc-64/sugarbay', d)}"
+KBRANCH_slate-64  = "${@base_conditional('TARGET_ARCH', 'i586', 'standard/base', 'standard/common-pc-64/sugarbay', d)}"
 
 KMACHINE_slate  = "common-pc"
-KMACHINE_slate-64  = "common-pc"
+KMACHINE_slate-64  = "sugarbay"
 
 KERNEL_FEATURES_append_slate += " features/iwlwifi"
 KERNEL_FEATURES_append_slate-64 += " features/iwlwifi"
