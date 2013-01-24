@@ -3,7 +3,7 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
 SRC_URI_envy = "git://git.yoctoproject.org/linux-yocto-3.0;protocol=git;bareclone=1;branch=${KBRANCH},meta,yocto/pvr;name=machine,meta,pvr"
-COMPATIBLE_MACHINE_envy = "cedartrail"
+COMPATIBLE_MACHINE_envy = "envy"
 
 KBRANCH_envy  = "yocto/standard/cedartrail"
 KERNEL_FEATURES_append_envy += "bsp/cedartrail/cedartrail-pvr-merge.scc"
