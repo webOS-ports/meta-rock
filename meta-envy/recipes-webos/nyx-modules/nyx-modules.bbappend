@@ -1,0 +1,1 @@
+SRC_URI_envy = "git://github.com/halfhalo/${PN};branch=udev;protocol=git"

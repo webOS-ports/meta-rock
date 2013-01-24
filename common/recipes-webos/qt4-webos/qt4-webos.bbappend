@@ -2,7 +2,7 @@ PR_append_x86 = "+rock+gitr${SRCPV}"
 SRC_URI_x86 = "git://github.com/halfhalo/qt;branch=rock/master;protocol=git"
 SRCREV_x86 ="${AUTOREV}"
 DEPENDS_append_x86 = " ${@base_contains('DISTRO_FEATURES', 'egl', 'virtual/egl', '', d)} directfb"
-DEPENDS_append_cedartrail= " cdv-pvr-driver"
+DEPENDS_append_envy= " cdv-pvr-driver"
 QT_CONFIG_FLAGS_rock ?= "${QT4_MACHINE_CONFIG_ARCH_LITE_QPA} \
                    ${QT_ENDIAN} -crossarch ${QT_ARCH} \
                    -release -opensource -confirm-license \
@@ -31,7 +31,7 @@ QT_CONFIG_FLAGS_slate ?= "${QT4_MACHINE_CONFIG_ARCH_LITE_QPA} \
                    -plugin-gfx-directfb ${@base_contains('DISTRO_FEATURES', 'egl', '-opengl -plugin-gfx-egl','-no-opengl', d)} -DMESA_EGL_NO_X11_HEADERS \
                    -make 'libs' \
                    -qconfig palm"				   
-QT_CONFIG_FLAGS_cedartrail ?= "${QT4_MACHINE_CONFIG_ARCH_LITE_QPA} \
+QT_CONFIG_FLAGS_envy ?= "${QT4_MACHINE_CONFIG_ARCH_LITE_QPA} \
                    ${QT_ENDIAN} -crossarch ${QT_ARCH} \
                    -release -opensource -confirm-license \
                    -no-cups -no-nis -no-exceptions \
@@ -42,7 +42,7 @@ QT_CONFIG_FLAGS_cedartrail ?= "${QT4_MACHINE_CONFIG_ARCH_LITE_QPA} \
                    -prefix ${prefix} -datadir ${libdir}/qmake-webos \
                    -xplatform qws/linux-cedartrail-g++ -no-neon -no-rpath -DQT_QWS_CLIENTBLIT -DQT_NO_DYNAMIC_CAST -DPALM_DEVICE \
                    -qt-mouse-pc -qt-mouse-qvfb -qt-mouse-linuxinput \
-                   -plugin-gfx-directfb -opengl -plugin-gfx-egl -DMESA_EGL_NO_X11_HEADERS \
+                   -plugin-gfx-directfb -powervr -plugin-gfx-egl -opengl es2 \
                    -make 'libs' \
                    -qconfig palm"
 do_install_append() {
