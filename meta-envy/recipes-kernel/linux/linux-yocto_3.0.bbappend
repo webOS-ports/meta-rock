@@ -7,7 +7,7 @@ SRC_URI_envy += "file://envy.scc \
                 file://envy.cfg \
                 "
 COMPATIBLE_MACHINE_envy = "envy"
-
+KMACHINE_envy = "cedartrail"
 KBRANCH_envy  = "yocto/standard/cedartrail"
 KERNEL_FEATURES_append_envy += "bsp/cedartrail/cedartrail-pvr-merge.scc"
 KERNEL_FEATURES_append_envy += "cfg/efi-ext.scc"
