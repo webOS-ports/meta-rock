@@ -3,6 +3,9 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
 SRC_URI_envy = "git://git.yoctoproject.org/linux-yocto-3.0;protocol=git;bareclone=1;branch=${KBRANCH},meta,yocto/pvr;name=machine,meta,pvr"
+SRC_URI_envy += "file://envy.scc \
+                file://envy.cfg \
+                "
 COMPATIBLE_MACHINE_envy = "envy"
 
 KBRANCH_envy  = "yocto/standard/cedartrail"
