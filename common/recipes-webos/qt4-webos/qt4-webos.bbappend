@@ -42,7 +42,7 @@ QT_CONFIG_FLAGS_envy ?= "${QT4_MACHINE_CONFIG_ARCH_LITE_QPA} \
                    -prefix ${prefix} -datadir ${libdir}/qmake-webos \
                    -xplatform qws/linux-cedartrail-g++ -no-neon -no-rpath -DQT_QWS_CLIENTBLIT -DQT_NO_DYNAMIC_CAST -DPALM_DEVICE \
                    -qt-mouse-pc -qt-mouse-qvfb -qt-mouse-linuxinput \
-                   -plugin-gfx-directfb -powervr -plugin-gfx-egl -opengl es2 \
+                   -plugin-gfx-directfb -plugin-gfx-powervr -plugin-gfx-egl -opengl es2 \
                    -make 'libs' \
                    -qconfig palm"
 do_install_append() {
