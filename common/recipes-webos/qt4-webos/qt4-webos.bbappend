@@ -1,8 +1,9 @@
 PR_append_x86 = "+rock+gitr${SRCPV}"
 SRC_URI_x86 = "git://github.com/halfhalo/qt;branch=rock/master;protocol=git"
 SRCREV_x86 ="${AUTOREV}"
-DEPENDS_append_rock = " ${@base_contains('DISTRO_FEATURES', 'egl', 'virtual/egl', '', d)} directfb"
-DEPENDS_append_slate = " ${@base_contains('DISTRO_FEATURES', 'egl', 'virtual/egl', '', d)} directfb"
+PR_append_x86_64 = "+rock+gitr${SRCPV}"
+SRC_URI_x86_64 = "git://github.com/halfhalo/qt;branch=rock/master;protocol=git"
+SRCREV_x86_64 ="${AUTOREV}"
 DEPENDS_append_envy= " cdv-pvr-driver directfb"
 QT_CONFIG_FLAGS_rock ?= "${QT4_MACHINE_CONFIG_ARCH_LITE_QPA} \
                    ${QT_ENDIAN} -crossarch ${QT_ARCH} \
@@ -29,7 +30,7 @@ QT_CONFIG_FLAGS_slate ?= "${QT4_MACHINE_CONFIG_ARCH_LITE_QPA} \
                    -prefix ${prefix} -datadir ${libdir}/qmake-webos \
                    -xplatform qws/linux-rock-g++ -no-neon -no-rpath -DQT_QWS_CLIENTBLIT -DQT_NO_DYNAMIC_CAST -DPALM_DEVICE \
                    -qt-mouse-pc -qt-mouse-qvfb -qt-mouse-linuxinput \
-                   -plugin-gfx-directfb ${@base_contains('DISTRO_FEATURES', 'egl', '-opengl -plugin-gfx-egl','-no-opengl', d)} -DMESA_EGL_NO_X11_HEADERS \
+                   -plugin-gfx-directfb -no-opengl -DMESA_EGL_NO_X11_HEADERS \
                    -make 'libs' \
                    -qconfig palm"				   
 QT_CONFIG_FLAGS_envy ?= "${QT4_MACHINE_CONFIG_ARCH_LITE_QPA} \

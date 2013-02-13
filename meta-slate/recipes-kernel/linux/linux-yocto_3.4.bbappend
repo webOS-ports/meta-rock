@@ -4,8 +4,9 @@ PRINC := "${@int(PRINC) + 1}"
 
 COMPATIBLE_MACHINE_slate = "slate"
 
-KBRANCH_slate  = "standard/common-pc-64/sugarbay"
 KMACHINE_slate  = "sugarbay"
+KBRANCH_slate  = "standard/base"
+
 
 KERNEL_FEATURES_append_slate += " features/iwlwifi"
 
