@@ -1,1 +1,1 @@
-PREFERRED_VERSION_guile-native ?= "2%"
+PREFERRED_VERSION_guile-native ?= "2.0.6"
