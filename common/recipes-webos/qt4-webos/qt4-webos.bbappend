@@ -6,8 +6,8 @@ PR_append_x86-64 = "+rock+gitr${SRCPV}"
 SRC_URI_x86-64 = "git://github.com/halfhalo/qt;branch=rock/master;protocol=git"
 SRCREV_x86-64 ="${AUTOREV}"
 
-DEPENDS_append_x86 = " virtual/libegl virtual/libgles2"
-DEPENDS_append_x86-64 = " virtual/libegl virtual/libgles2"
+DEPENDS_append_x86 = " virtual/egl virtual/libgles2"
+DEPENDS_append_x86-64 = " virtual/egl virtual/libgles2"
 
 DEPENDS_append_envy= " cdv-pvr-driver"
 QT_CONFIG_FLAGS_rock ?= "${QT4_MACHINE_CONFIG_ARCH_LITE_QPA} \
