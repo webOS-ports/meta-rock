@@ -10,8 +10,7 @@ EXTRA_OECONF_slate = "--disable-glu \
                 --enable-gles1 --enable-gles2 --enable-gles3 \
                 --enable-egl --with-egl-platforms=drm,wayland,fbdev \
                 "
-PACKAGES +=" libgles3-mesa libegl-gallium libgbm-gallium mesa-pipe-i915 mesa-pipe-swrast"
-FILES_libgles3-mesa = "${libdir}/libGLESv3.so.*"
+PACKAGES +=" libegl-gallium libgbm-gallium mesa-pipe-i915 mesa-pipe-swrast"
 FILES_libegl-gallium = "${libdir}/egl/egl_gallium.so.*"
 FILES_libgbm-gallium = "${libdir}/gbm/gbm_gallium_drm.so.*"
 FILES_mesa-pipe-i915 = "${libdir}/gbm/pipe_i915.so.*"
