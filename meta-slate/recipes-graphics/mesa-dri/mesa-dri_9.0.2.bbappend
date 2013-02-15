@@ -1,11 +1,11 @@
-export WANT_LLVM_RELEASE="2.9"
-DEPENDS_append_slate =" wayland llvm2.9 "
+export WANT_LLVM_RELEASE="2.8"
+DEPENDS_append_slate =" wayland llvm2.8 "
 PRINC := "${@int(PRINC) + 1}"
 EXTRA_OECONF_slate = "--disable-glu \
                 --disable-glw \
                 --disable-glut \
                 --enable-shared-glapi \
-                --enable-gallium --enable-gallium-egl --with-gallium-drivers=i915 \
+                --enable-gallium --enable-gallium-egl --with-gallium-drivers=i915,llvmpipe \
                 --enable-dri --with-dri-drivers=${DRIDRIVERS} --enable-openvg \
                 --enable-gbm \
                 --enable-gles1 --enable-gles2 --enable-gles3 \
