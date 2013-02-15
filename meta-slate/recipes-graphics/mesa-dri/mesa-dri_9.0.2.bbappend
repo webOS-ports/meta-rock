@@ -1,5 +1,5 @@
-export WANT_LLVM_RELEASE="2.8"
-DEPENDS_append_slate =" wayland llvm2.8 "
+export WANT_LLVM_RELEASE="2.9"
+DEPENDS_append_slate =" wayland llvm2.8 llvm2.9 "
 PRINC := "${@int(PRINC) + 1}"
 EXTRA_OECONF_slate = "--disable-glu \
                 --disable-glw \
