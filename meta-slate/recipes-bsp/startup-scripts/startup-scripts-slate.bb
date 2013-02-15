@@ -19,6 +19,6 @@ do_install() {
     install -d ${D}${sbindir}
     install -m 0755 ${WORKDIR}/setkeycode-script  ${D}${sysconfdir}/init.d/
 
-    ln -sf ../init.d/setkeycode-script  ${D}${sysconfdir}/rc5.d/S90setkeycode-script
+    ln -sf ../init.d/setkeycode-script  ${D}${sysconfdir}/rcS.d/S90setkeycode-script
 
 }
