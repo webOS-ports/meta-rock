@@ -5,5 +5,5 @@ SRCREV_x86 ="${AUTOREV}"
 
 PR_append_x86-64 = "+rock+gitr${SRCPV}"
 DEPENDS_append_x86-64 =" luna-sysmgr-common"
-SRC_URI_x86-64 = "git://github.com/halfhalo/${PN};branch=rock/master;protocol=git"
+SRC_URI_x86-64 = "git://github.com/halfhalo/${PN};branch=rock/gallium;protocol=git"
 SRCREV_x86-64 ="${AUTOREV}"
