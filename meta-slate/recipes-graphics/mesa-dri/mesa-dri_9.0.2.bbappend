@@ -16,5 +16,3 @@ FILES_libegl-gallium = "${libdir}/egl/egl_gallium.so*"
 FILES_libgbm-gallium = "${libdir}/gbm/gbm_gallium_drm.so*"
 FILES_mesa-pipe-i915 = "${libdir}/gbm/pipe_i915.so*"
 FILES_mesa-pipe-swrast = "${libdir}/gbm/pipe_swrast.so*"
-
-IMAGE_INSTALL_append_slate =" mesa-dri-driver-* libgles3-mesa libgles2-mesa mesa-pipe-i915 mesa-pipe-swrast libgbm-gallium libegl-gallium"
