@@ -5,7 +5,7 @@ EXTRA_OECONF_slate = "--disable-glu \
                 --disable-glw \
                 --disable-glut \
                 --enable-shared-glapi \
-                --enable-gallium --enable-gallium-egl --with-gallium-drivers=i915,llvmpipe \
+                --enable-gallium --enable-gallium-egl --with-gallium-drivers=i915 \
                 --enable-dri --with-dri-drivers=${DRIDRIVERS} --enable-openvg \
                 --enable-gbm \
                 --enable-gles1 --enable-gles2 --enable-gles3 \
