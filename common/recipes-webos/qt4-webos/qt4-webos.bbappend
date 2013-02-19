@@ -1,7 +1,8 @@
 PR_append_x86 = "+rock+gitr${SRCPV}"
 SRC_URI_x86 = "git://github.com/halfhalo/qt;branch=rock/master;protocol=git"
 SRCREV_envy = "db74ac38d96d24bd302c0d1e9e9aab3ea8431972"
-SRCREV_x86 ?= "${AUTOREV}"
+SRCREV_x86 = "db74ac38d96d24bd302c0d1e9e9aab3ea8431972"
+#SRCREV_x86 ?= "${AUTOREV}"
 
 
 PR_append_x86-64 = "+rock+gitr${SRCPV}"
