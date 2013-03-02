@@ -8,5 +8,6 @@ SRC_URI += "file://rock.scc \
             file://user-config.cfg \
             file://user-patches.scc \
            "
+KERNEL_FEATURES_append += "cfg/efi-ext.scc cfg/efi.scc"
 SRC_URI += "${@base_conditional('TARGET_ARCH', 'i586', 'file://rock-standard-32.scc', 'file://rock-standard-64.scc', d)}"
 
