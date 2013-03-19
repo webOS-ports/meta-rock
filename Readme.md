@@ -2,13 +2,16 @@
 ##MCF Way:
 The devices in the meta-rock layer can be built using a slightly tweaked version of the stock OWOS build scripts.  Namely, we have a slightly modified mcf with tweaked git logic.  The entire build can be done with stock tools, but the slightly modified script helps the process along.
 
-1. First, we need to grab the modified build-webos folder:<br>/`git clone git://github.com/halfhalo/build-webos.git`
+1. First, we need to grab the modified build-webos folder:<br>`git clone git://github.com/halfhalo/build-webos.git`
 
 2. Next, we need to change into that directory:<br/>`cd build-webos`
 3. We need to switch to the modified branch:<br/>`git checkout remote-layers`
 4. To install any build dependencies, run:<br>`sudo scripts/prerequisites.sh`
 5. To setup the build environment, run:<br>`./mcf -p0 -b0 -r https://raw.github.com/halfhalo/rock-layers/master/weboslayers.py rock`<br>`./mcf -p0 -b0 -r https://raw.github.com/halfhalo/rock-layers/master/weboslayers.py slate`<br>`./mcf -p0 -b0 -r https://raw.github.com/halfhalo/rock-layers/master/weboslayers.py envy`<br> depending on what machine you want to build
 6. Finally, type `make webos-image` to start the build!
+
+#Installing:
+Installing is easy.  Grab unetbootin and a flash drive, and use unetbootin to flash one of the iso files located in BUILD-*/deploy/images/webos-image-*.iso.  Once flashed to a usb drive, you can boot straight from it.  Be warned, however, that the install option will wipe the device completely to install OWOS
 
 #Needs to be done:    
 ##General:
