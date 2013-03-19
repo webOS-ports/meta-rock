@@ -1,3 +1,18 @@
+#General:
+###Machines
+This layer currently plays host to three Machine BSP's embedded within it: The Samsung Series 7 Slate, HP Envy X2, and Generic x86 "Rock" Device.
+####Samsung Series 7 Slate (slate)
+[![Build Status](https://jenkins.silentbluesystems.com/job/build-slate-webos-image-auto/badge/icon)](https://jenkins.silentbluesystems.com/job/build-slate-webos-image-auto/)<br>
+The Series 7 Slate is a pretty Generic Sandybridge based Tablet.  These images generally work on sandy- and ivy-bridge devices with little to no fuss.  It will not work on earlier hardware due to tune flags specific to newer i7's.
+
+####HP Envy X2
+[![Build Status](https://jenkins.silentbluesystems.com/job/build-envy-webos-image-auto/badge/icon)](https://jenkins.silentbluesystems.com/job/build-envy-webos-image-auto/)<br>
+The Envy X2 is one of the newest Windows 8 Atom devices.  While this image currently builds, it is not installable due to UEFI/32bit issues.
+
+####Generic x86 "Rock"
+[![Build Status](https://jenkins.silentbluesystems.com/job/build-rock-webos-image-auto/badge/icon)](https://jenkins.silentbluesystems.com/job/build-rock-webos-image-auto/)<br>
+The Rock build is based on the slate build, but without some of the slate specific customizations.  Its build for Intel x64 systems with ati and nvidia kernel support.  Its generally the build you want to try on your hardware.
+
 #Building:
 ##MCF Way:
 The devices in the meta-rock layer can be built using a slightly tweaked version of the stock OWOS build scripts.  Namely, we have a slightly modified mcf with tweaked git logic.  The entire build can be done with stock tools, but the slightly modified script helps the process along.
@@ -48,7 +63,8 @@ Installing is easy.  Grab unetbootin and a flash drive, and use unetbootin to fl
   + Having the Slate properly recognize its dock and set its ethernet connection, properly setup any external displays, and properly recognize usb devices
 
 ##HP Envy X2 (envy):
-###Nyx:
+###Kernel:
++ Get it to boot!
 
 ##Rock (Other/Generic):
 ###Misc:
