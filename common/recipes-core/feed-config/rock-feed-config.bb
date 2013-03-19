@@ -5,8 +5,6 @@ PR = "r2"
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 INHIBIT_DEFAULT_DEPS = "1"
 
-#FEEDNAMEPREFIX ?= "INVALID"
-#FEEDURIPREFIX ?= "INVALID"
 
 do_compile() {
 	mkdir -p ${S}/${sysconfdir}/opkg/
